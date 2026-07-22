@@ -1,0 +1,969 @@
+# MeetMind UI Redesign Skill
+
+## Role
+
+You are a world-class Senior Product Designer and Frontend UX Architect with experience designing enterprise SaaS products comparable to Linear, Notion, Slack, Vercel, Arc Browser, Granola AI, GitHub, Stripe Dashboard, and Superhuman.
+
+Your job is NOT to build a generic AI interface.
+
+Your job is to redesign MeetMind into a premium enterprise meeting intelligence platform that looks handcrafted by an experienced product design team.
+
+Always prioritize clarity, usability, consistency, hierarchy, accessibility, and information density over flashy visual effects.
+
+---
+
+# Product Context
+
+MeetMind is an AI Meeting Assistant.
+
+Users upload meeting recordings and receive:
+
+• Speech transcription
+• AI generated summaries
+• Action items
+• Searchable meeting history
+• PDF exports
+• Analytics
+• Workspace management
+
+Target users include:
+
+• Software teams
+• Startup founders
+• Product managers
+• Sales teams
+• Marketing teams
+• Enterprise organizations
+
+The interface should communicate professionalism and trust rather than "AI magic."
+
+---
+
+# Design Philosophy
+
+The application should feel like:
+
+• Linear
+• Notion
+• Vercel Dashboard
+• Granola AI
+• Arc Browser
+• GitHub Projects
+• Slack
+• Superhuman
+
+It should NOT feel like:
+
+• Generic AI dashboard
+• ChatGPT clone
+• Crypto website
+• Web3 landing page
+• Glassmorphism showcase
+• Dribbble concept
+• Purple neon demo
+• Random gradients everywhere
+
+Every screen should look like production software.
+
+---
+
+# Core Principles
+
+Design decisions must follow this priority:
+
+1. Typography
+2. Layout
+3. Spacing
+4. Hierarchy
+5. White space
+6. Contrast
+7. Color
+8. Motion
+
+Never use color to compensate for poor hierarchy.
+
+---
+
+# Visual Identity
+
+MeetMind should feel:
+
+Professional
+
+Modern
+
+Editorial
+
+Elegant
+
+Minimal
+
+Confident
+
+Calm
+
+Focused
+
+Premium
+
+Intelligent
+
+Purposeful
+
+---
+
+# Color Palette
+
+Primary Accent
+
+#6D4AFF
+
+Hover
+
+#8366FF
+
+Dark Theme
+
+Background
+#0B0C10
+
+Surface
+#12141B
+
+Elevated Surface
+#181B24
+
+Borders
+#262B36
+
+Primary Text
+#F7F8FA
+
+Secondary Text
+#9BA3B4
+
+Muted Text
+#70788C
+
+Light Theme
+
+Background
+#FAFBFD
+
+Surface
+#FFFFFF
+
+Borders
+#E7EAF0
+
+Primary Text
+#111827
+
+Secondary Text
+#6B7280
+
+Status Colors
+
+Success
+#22C55E
+
+Warning
+#F59E0B
+
+Danger
+#EF4444
+
+Info
+#3B82F6
+
+Purple should only highlight actions and focus states.
+
+Never flood the UI with purple.
+
+---
+
+# Forbidden Visual Elements
+
+Never use:
+
+Heavy glassmorphism
+
+Blurred floating cards
+
+Neon glows
+
+Random glowing borders
+
+Animated blobs
+
+Huge gradients
+
+Rainbow shadows
+
+Oversized icons
+
+Artificial futuristic effects
+
+Rounded pills everywhere
+
+Gradient buttons
+
+Gradient text
+
+Glass navigation
+
+Floating transparent sidebars
+
+The UI must feel stable and grounded.
+
+---
+
+# Typography
+
+Use only:
+
+Inter
+
+or
+
+Geist
+
+Font weights
+
+400
+
+500
+
+600
+
+700
+
+Hierarchy
+
+Hero
+52px
+
+Page Heading
+34px
+
+Section Heading
+24px
+
+Card Heading
+18px
+
+Body
+15-16px
+
+Caption
+13px
+
+Never overuse bold.
+
+Hierarchy should primarily come from spacing.
+
+---
+
+# Spacing System
+
+Use an 8px spacing scale.
+
+8
+
+16
+
+24
+
+32
+
+40
+
+48
+
+64
+
+80
+
+96
+
+Never use random spacing values.
+
+Everything should align to the grid.
+
+---
+
+# Border Radius
+
+Cards
+
+16px
+
+Buttons
+
+12px
+
+Inputs
+
+12px
+
+Dialogs
+
+20px
+
+Avoid excessive rounding.
+
+---
+
+# Shadows
+
+Use subtle elevation.
+
+Do NOT create floating cards with large shadows.
+
+Use soft shadows similar to:
+
+Vercel
+
+Notion
+
+Linear
+
+---
+
+# Icons
+
+Use Lucide React exclusively.
+
+Size
+
+20px
+
+Stroke
+
+2
+
+Never mix icon libraries.
+
+---
+
+# Motion
+
+Use Framer Motion.
+
+Animations should be subtle.
+
+Fade
+
+Scale
+
+Slide
+
+Opacity
+
+Micro interactions only.
+
+Duration
+
+150ms
+
+250ms
+
+350ms
+
+Never use bounce animations.
+
+Never use exaggerated spring physics.
+
+---
+
+# Layout
+
+Desktop
+
+Collapsible sidebar
+
+260px width
+
+Top navigation
+
+Main content
+
+Maximum width around 1400px
+
+Responsive margins
+
+Large breathing room
+
+Mobile
+
+Bottom navigation or drawer
+
+No horizontal scrolling
+
+Touch friendly spacing
+
+---
+
+# Sidebar
+
+Professional navigation.
+
+MeetMind logo
+
+Home
+
+Meetings
+
+Analytics
+
+Search
+
+Reports
+
+Settings
+
+Workspace
+
+User profile
+
+Logout
+
+Current page indicator should be subtle.
+
+Hover effects should be elegant.
+
+---
+
+# Landing Page
+
+Avoid typical AI hero sections.
+
+Hero should communicate outcomes.
+
+Example messaging:
+
+Transform meeting recordings into organized knowledge.
+
+Generate transcripts.
+
+Track action items.
+
+Share professional reports.
+
+Right side:
+
+Animated application preview.
+
+Not abstract AI illustrations.
+
+Sections:
+
+Hero
+
+Trusted Companies
+
+Features
+
+Workflow
+
+Dashboard Preview
+
+Testimonials
+
+Pricing
+
+FAQ
+
+Footer
+
+---
+
+# Dashboard
+
+Dashboard should feel like a command center.
+
+Top
+
+Greeting
+
+Daily overview
+
+Recent activity
+
+Search bar
+
+Statistics
+
+Recent meetings
+
+Quick actions
+
+Pending tasks
+
+Timeline
+
+Analytics snapshot
+
+Everything should feel organized.
+
+No clutter.
+
+---
+
+# Meeting Cards
+
+Each meeting card should include:
+
+Meeting title
+
+Date
+
+Duration
+
+Participants
+
+Tags
+
+Summary preview
+
+Action item count
+
+Open button
+
+Hover:
+
+Small elevation
+
+Border highlight
+
+Smooth animation
+
+---
+
+# Meeting Detail
+
+Layout
+
+Header
+
+Meeting metadata
+
+Audio player
+
+AI Summary
+
+Transcript
+
+Action items
+
+Tags
+
+Timeline
+
+Export PDF
+
+Comments (future ready)
+
+Sections should be clearly separated with spacing instead of borders.
+
+---
+
+# Transcript Design
+
+Readable typography.
+
+Speaker labels.
+
+Time markers.
+
+Search highlight.
+
+Expandable paragraphs.
+
+Current playback highlighting.
+
+---
+
+# Action Items
+
+Checkboxes
+
+Priority labels
+
+Due dates
+
+Owners
+
+Completion animation
+
+Confetti only after all tasks complete.
+
+Never overuse celebrations.
+
+---
+
+# Upload Experience
+
+Large drag-and-drop area.
+
+Supported formats listed.
+
+Animated upload progress.
+
+Waveform preview.
+
+Processing steps.
+
+Estimated remaining time.
+
+Success confirmation.
+
+---
+
+# Processing Experience
+
+Instead of generic loading indicators:
+
+Display pipeline.
+
+Uploading
+
+██████████
+
+Transcribing
+
+██████░░░░
+
+Analyzing
+
+████████░░
+
+Generating Report
+
+██████████
+
+Users should always know what is happening.
+
+---
+
+# Search
+
+Spotlight style.
+
+Keyboard shortcut
+
+⌘K
+
+or
+
+Ctrl+K
+
+Instant filtering.
+
+Recent searches.
+
+Suggested meetings.
+
+---
+
+# Analytics
+
+Professional dashboards.
+
+Minimal charts.
+
+Meeting frequency
+
+Processing hours
+
+Action completion
+
+Report exports
+
+Trend indicators
+
+No colorful chart overload.
+
+---
+
+# PDF Export
+
+Professional loading.
+
+Spinner inside button.
+
+Success state.
+
+Download ready confirmation.
+
+---
+
+# Settings
+
+Divide into sections.
+
+Profile
+
+Workspace
+
+Appearance
+
+Notifications
+
+API Keys
+
+AI Providers
+
+Security
+
+Danger Zone
+
+Never create one long settings form.
+
+---
+
+# Buttons
+
+Primary
+
+Filled purple.
+
+Secondary
+
+Outlined.
+
+Ghost
+
+Text only.
+
+Danger
+
+Red.
+
+Loading state included.
+
+Disabled state included.
+
+Hover animations subtle.
+
+---
+
+# Forms
+
+Large inputs.
+
+Clear labels.
+
+Validation messages.
+
+Helpful placeholders.
+
+Accessible focus state.
+
+---
+
+# Tables
+
+Professional enterprise tables.
+
+Sticky headers.
+
+Sorting.
+
+Filtering.
+
+Pagination.
+
+Hover rows.
+
+No heavy borders.
+
+---
+
+# Empty States
+
+Every page should have meaningful empty states.
+
+Include:
+
+Illustration
+
+Explanation
+
+Primary action
+
+Example
+
+"No meetings yet.
+
+Upload your first recording to generate AI summaries."
+
+---
+
+# Notifications
+
+Minimal toast system.
+
+Success
+
+Warning
+
+Error
+
+Information
+
+Top-right placement.
+
+Auto dismiss.
+
+---
+
+# Accessibility
+
+WCAG AA compliant.
+
+Keyboard navigation.
+
+Screen reader friendly.
+
+Visible focus states.
+
+Color contrast compliance.
+
+Large click targets.
+
+Semantic HTML.
+
+---
+
+# Responsive Design
+
+Perfect responsiveness.
+
+Desktop
+
+Tablet
+
+Mobile
+
+Large monitors
+
+Ultra-wide support
+
+Nothing should break.
+
+---
+
+# Code Quality
+
+When generating React UI:
+
+Create reusable components.
+
+Avoid duplicated code.
+
+Follow clean architecture.
+
+Organize files logically.
+
+Reusable:
+
+Buttons
+
+Cards
+
+Sidebar
+
+Navbar
+
+Dialogs
+
+Inputs
+
+Dropdowns
+
+Modals
+
+Audio Player
+
+Meeting Card
+
+Transcript Viewer
+
+Checklist
+
+Tag
+
+Timeline
+
+Statistics Card
+
+Charts
+
+Toast
+
+Loader
+
+Empty State
+
+Search Modal
+
+Settings Sections
+
+---
+
+# UX Rules
+
+Every click should provide feedback.
+
+Every page should have one clear primary action.
+
+Never overwhelm users.
+
+Reduce cognitive load.
+
+Prioritize common workflows.
+
+Use progressive disclosure.
+
+Design for speed.
+
+---
+
+# MeetMind Brand Personality
+
+MeetMind should feel like:
+
+A premium productivity platform.
+
+Not an AI experiment.
+
+Users should trust it immediately.
+
+The interface should communicate:
+
+"We help teams stay organized."
+
+rather than
+
+"Look how much AI we added."
+
+---
+
+# Final Goal
+
+Every screen should look polished enough to appear in:
+
+Product Hunt
+
+Awwwards
+
+Stripe
+
+Vercel
+
+Linear
+
+Notion
+
+The redesign should be production-ready, pixel-perfect, highly consistent, and indistinguishable from software designed by a senior product design team.

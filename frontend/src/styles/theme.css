@@ -1,0 +1,131 @@
+/* MeetMind CSS Theme & Token System */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  
+  /* Transition timings */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  /* Spacing Scale (8px) */
+  --spacing-1: 8px;
+  --spacing-2: 16px;
+  --spacing-3: 24px;
+  --spacing-4: 32px;
+  --spacing-5: 40px;
+  --spacing-6: 48px;
+  --spacing-7: 64px;
+  --spacing-8: 80px;
+  --spacing-9: 96px;
+
+  /* Border Radii - Sharper, premium SaaS values */
+  --radius-sm: 4px;
+  --radius-md: 6px;   /* buttons, inputs */
+  --radius-lg: 8px;   /* cards, dashboard components */
+  --radius-xl: 12px;  /* dialogs, modal popups */
+
+  /* Default Theme Variables (Dark Theme) */
+  --bg-app: #0B0C10;
+  --bg-body: #0B0C10;
+  --bg-sidebar: #12141B;
+  --bg-card: #12141B;
+  --bg-elevated: #181B24;
+  
+  --text-primary: #F7F8FA;
+  --text-secondary: #9BA3B4;
+  --text-muted: #70788C;
+  
+  --border-light: #262B36;
+  --border-glass: #262B36;
+  
+  --accent-purple: #6D4AFF;
+  --accent-purple-hover: #8366FF;
+  
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  
+  --skeleton-bg: #181B24;
+  --skeleton-highlight: #262B36;
+
+  --sentiment-pos-bg: rgba(34, 197, 94, 0.1);
+  --sentiment-pos-text: #22C55E;
+  --sentiment-neu-bg: rgba(107, 114, 128, 0.1);
+  --sentiment-neu-text: #9CA3AF;
+  --sentiment-neg-bg: rgba(239, 68, 68, 0.1);
+  --sentiment-neg-text: #EF4444;
+
+  --status-success: #22C55E;
+  --status-warning: #F59E0B;
+  --status-danger: #EF4444;
+  --status-info: #3B82F6;
+}
+
+/* Light Theme Variables - Clean Off-White */
+:root[data-theme="light"] {
+  --bg-app: #F4F5F8;
+  --bg-body: #F4F5F8;
+  --bg-sidebar: #FFFFFF;
+  --bg-card: #FFFFFF;
+  --bg-elevated: #EAECEF;
+  
+  --text-primary: #1A1F2C;
+  --text-secondary: #5F6672;
+  --text-muted: #8B94A5;
+  
+  --border-light: #DFE2E6;
+  --border-glass: #DFE2E6;
+  
+  --accent-purple: #6D4AFF;
+  --accent-purple-hover: #8366FF;
+  
+  --shadow-sm: 0 1px 2px 0 rgba(26, 31, 44, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(26, 31, 44, 0.05), 0 2px 4px -1px rgba(26, 31, 44, 0.03);
+  --shadow-lg: 0 10px 15px -3px rgba(26, 31, 44, 0.06), 0 4px 6px -2px rgba(26, 31, 44, 0.03);
+  
+  --skeleton-bg: #EAECEF;
+  --skeleton-highlight: #F4F5F8;
+
+  --sentiment-pos-bg: rgba(34, 197, 94, 0.1);
+  --sentiment-pos-text: #22C55E;
+  --sentiment-neu-bg: rgba(107, 114, 128, 0.1);
+  --sentiment-neu-text: #5F6672;
+  --sentiment-neg-bg: rgba(239, 68, 68, 0.1);
+  --sentiment-neg-text: #EF4444;
+}
+
+/* Dark Theme Variables explicitly */
+:root[data-theme="dark"] {
+  --bg-app: #0B0C10;
+  --bg-body: #0B0C10;
+  --bg-sidebar: #12141B;
+  --bg-card: #12141B;
+  --bg-elevated: #181B24;
+  
+  --text-primary: #F7F8FA;
+  --text-secondary: #9BA3B4;
+  --text-muted: #70788C;
+  
+  --border-light: #262B36;
+  --border-glass: #262B36;
+  
+  --accent-purple: #6D4AFF;
+  --accent-purple-hover: #8366FF;
+  
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  
+  --skeleton-bg: #181B24;
+  --skeleton-highlight: #262B36;
+
+  --sentiment-pos-bg: rgba(34, 197, 94, 0.1);
+  --sentiment-pos-text: #22C55E;
+  --sentiment-neu-bg: rgba(107, 114, 128, 0.1);
+  --sentiment-neu-text: #9CA3AF;
+  --sentiment-neg-bg: rgba(239, 68, 68, 0.1);
+  --sentiment-neg-text: #EF4444;
+}
