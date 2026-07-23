@@ -31,11 +31,6 @@ services:
         value: uploads
       - key: PDF_DIR
         value: generated_pdfs
-      # Optional: External API keys (Prompted on initial blueprint setup, can leave empty for Sandbox Mode)
-      - key: GEMINI_API_KEY
-        sync: false
-      - key: OPENAI_API_KEY
-        sync: false
 
   # Frontend Vite React Static Site
   - type: web
