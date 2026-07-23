@@ -19,6 +19,24 @@ class Settings(BaseSettings):
 
 settings = Settings()
 
+# Adjust paths for read-only environments (like Vercel serverless)
+if os.environ.get("VERCEL"):
+    # Auto-detect Vercel Postgres URL, external DATABASE_URL, or custom STORAGE_URL if configured
+    postgres_url = os.environ.get("POSTGRES_URL") or os.environ.get("DATABASE_URL") or os.environ.get("STORAGE_URL")
+    if postgres_url and not postgres_url.startswith("sqlite"):
+        settings.DATABASE_URL = postgres_url
+    elif settings.DATABASE_URL == "sqlite:///./meetmind.db" or settings.DATABASE_URL.startswith("sqlite:///."):
+        settings.DATABASE_URL = "sqlite:////tmp/meetmind.db"
+    
+    settings.UPLOAD_DIR = "/tmp/uploads"
+    settings.PDF_DIR = "/tmp/generated_pdfs"
+
 # Ensure directories exist
-Path(settings.UPLOAD_DIR).mkdir(parents=True, exist_ok=True)
-Path(settings.PDF_DIR).mkdir(parents=True, exist_ok=True)
+try:
+    Path(settings.UPLOAD_DIR).mkdir(parents=True, exist_ok=True)
+    Path(settings.PDF_DIR).mkdir(parents=True, exist_ok=True)
+except Exception as e:
+    # Do not crash the app if mkdir fails
+    import sys
+    print(f"Warning: Could not create directories: {e}", file=sys.stderr)
+

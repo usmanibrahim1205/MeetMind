@@ -43,7 +43,18 @@ const Login = () => {
       showToast(`Welcome back, ${userResponse.data.username}!`, 'success');
       navigate('/dashboard');
     } catch (error) {
-      const errMsg = error.response?.data?.detail || 'Authentication failed. Please check credentials.';
+      let errMsg = 'Authentication failed. Please check credentials.';
+      if (error.response?.data) {
+        if (typeof error.response.data.detail === 'string') {
+          errMsg = error.response.data.detail;
+        } else if (Array.isArray(error.response.data.detail)) {
+          errMsg = error.response.data.detail.map(err => err.msg || JSON.stringify(err)).join(', ');
+        } else if (error.response.data.message) {
+          errMsg = error.response.data.message;
+        }
+      } else if (error.message) {
+        errMsg = `Connection error: ${error.message}`;
+      }
       showToast(errMsg, 'error');
     } finally {
       setLoading(false);

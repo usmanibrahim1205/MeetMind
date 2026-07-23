@@ -58,7 +58,18 @@ const Register = () => {
       showToast(`Welcome to MeetMind, ${userResponse.data.username}!`, 'success');
       navigate('/dashboard');
     } catch (error) {
-      const errMsg = error.response?.data?.detail || 'Registration failed. Username or email might be taken.';
+      let errMsg = 'Registration failed. Username or email might be taken.';
+      if (error.response?.data) {
+        if (typeof error.response.data.detail === 'string') {
+          errMsg = error.response.data.detail;
+        } else if (Array.isArray(error.response.data.detail)) {
+          errMsg = error.response.data.detail.map(err => err.msg || JSON.stringify(err)).join(', ');
+        } else if (error.response.data.message) {
+          errMsg = error.response.data.message;
+        }
+      } else if (error.message) {
+        errMsg = `Connection error: ${error.message}`;
+      }
       showToast(errMsg, 'error');
     } finally {
       setLoading(false);

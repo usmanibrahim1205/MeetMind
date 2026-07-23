@@ -1,0 +1,55 @@
+databases:
+  - name: meetmind-db
+    databaseName: meetmind
+    plan: free
+
+services:
+  # Backend FastAPI Web Service
+  - type: web
+    name: meetmind-backend
+    env: python
+    plan: free
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: meetmind-db
+          property: connectionString
+      - key: JWT_SECRET_KEY
+        generateValue: true
+      - key: JWT_ALGORITHM
+        value: HS256
+      - key: ACCESS_TOKEN_EXPIRE_MINUTES
+        value: 120
+      - key: OFFLINE_MODE
+        value: local
+      - key: WHISPER_MODEL
+        value: small
+      - key: UPLOAD_DIR
+        value: uploads
+      - key: PDF_DIR
+        value: generated_pdfs
+      # Optional: External API keys (Prompted on initial blueprint setup, can leave empty for Sandbox Mode)
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: OPENAI_API_KEY
+        sync: false
+
+  # Frontend Vite React Static Site
+  - type: static
+    name: meetmind-frontend
+    rootDir: frontend
+    buildCommand: npm install && npm run build
+    staticPublishPath: ./dist
+    routes:
+      # Support client-side routing (React Router) by rewriting all page routes to index.html
+      - type: rewrite
+        source: /*
+        destination: /index.html
+    envVars:
+      # The public URL of the deployed meetmind-backend (e.g., https://meetmind-backend.onrender.com/api)
+      # User will be prompted to enter this during deployment
+      - key: VITE_API_URL
+        sync: false

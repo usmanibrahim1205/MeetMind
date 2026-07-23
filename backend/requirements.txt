@@ -11,4 +11,4 @@ reportlab
 python-dotenv
 nest-asyncio
 email-validator
-
+psycopg2-binary

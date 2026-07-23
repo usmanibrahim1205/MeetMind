@@ -134,6 +134,34 @@ MeetMind/
 
 ---
 
+## Deployment to Render
+
+MeetMind is ready to be deployed on Render using the included infrastructure-as-code `render.yaml` blueprint. The blueprint automatically provisions:
+1. A **PostgreSQL database** (persistent, free tier).
+2. A **FastAPI Python backend web service** (free tier).
+3. A **Vite React static site** (free tier, globally hosted on CDN).
+
+### Step-by-Step Deployment Guide
+
+1. **Push your code** to your GitHub, GitLab, or Bitbucket repository.
+2. Go to the [Render Dashboard](https://dashboard.render.com/) and click **New +** > **Blueprint**.
+3. Select and connect your Git repository.
+4. Render will automatically detect the `render.yaml` file. You will be prompted to configure the environment variables:
+   - `GEMINI_API_KEY` (Optional: Leave empty to use local fallback / sandbox mode, or paste your API key).
+   - `OPENAI_API_KEY` (Optional: Leave empty).
+   - `VITE_API_URL` (For now, enter a placeholder like `https://temp.onrender.com/api`. We will update this in the next step).
+5. Click **Apply** to deploy the services.
+6. Once the services are provisioned:
+   - Locate your backend service (`meetmind-backend`) in the dashboard and copy its public URL (e.g., `https://meetmind-backend.onrender.com`).
+   - Go to your frontend service (`meetmind-frontend`) settings, click on the **Environment** tab, update the value of `VITE_API_URL` to `https://<your-backend-url>.onrender.com/api`, and save.
+   - Render will automatically rebuild and redeploy the frontend with the correct backend API endpoint baked in!
+
+> [!NOTE]
+> **Data Persistence:** User credentials, meeting transcripts, summaries, and action checklists are saved persistently in the PostgreSQL database. Uploaded audio files and PDF reports are stored in the backend container's local disk, which is ephemeral on Render's free tier (files will be cleared if the service restarts). For persistent file storage, you can scale the backend to a paid tier and attach a Render Persistent Disk, or integrate a cloud storage provider (like AWS S3).
+
+---
+
+
 ## Key Features Guide
 
 ### Frictionless Sandbox Mode
