@@ -7,7 +7,7 @@ services:
   # Backend FastAPI Web Service
   - type: web
     name: meetmind-backend
-    env: python
+    runtime: python
     plan: free
     rootDir: backend
     buildCommand: pip install -r requirements.txt
@@ -38,7 +38,8 @@ services:
         sync: false
 
   # Frontend Vite React Static Site
-  - type: static
+  - type: web
+    runtime: static
     name: meetmind-frontend
     rootDir: frontend
     buildCommand: npm install && npm run build
